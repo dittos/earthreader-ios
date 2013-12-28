@@ -28,6 +28,9 @@
 		27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9784186EC1A10014F581 /* ERSubscriptionList.m */; };
 		27DA9787186EC7250014F581 /* kivy-ios-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DA9786186EC7250014F581 /* kivy-ios-fat.a */; };
 		27DA9789186ED0020014F581 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9788186ED0020014F581 /* lib */; };
+		27DA978C186ED8F60014F581 /* ERFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978B186ED8F60014F581 /* ERFeed.m */; };
+		27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978E186EE0730014F581 /* ERPythonMapping.m */; };
+		27DA9791186EE9CF0014F581 /* helpers.py in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9790186EE9CF0014F581 /* helpers.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,11 @@
 		27DA9784186EC1A10014F581 /* ERSubscriptionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionList.m; sourceTree = "<group>"; };
 		27DA9786186EC7250014F581 /* kivy-ios-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "kivy-ios-fat.a"; path = "build/lib/kivy-ios-fat.a"; sourceTree = "<group>"; };
 		27DA9788186ED0020014F581 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = build/python/lib; sourceTree = "<group>"; };
+		27DA978A186ED8F60014F581 /* ERFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERFeed.h; sourceTree = "<group>"; };
+		27DA978B186ED8F60014F581 /* ERFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERFeed.m; sourceTree = "<group>"; };
+		27DA978D186EE0730014F581 /* ERPythonMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonMapping.h; sourceTree = "<group>"; };
+		27DA978E186EE0730014F581 /* ERPythonMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonMapping.m; sourceTree = "<group>"; };
+		27DA9790186EE9CF0014F581 /* helpers.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = helpers.py; path = EarthReader/helpers.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		27CEE6E9186D75A10055DECD = {
 			isa = PBXGroup;
 			children = (
+				27DA9790186EE9CF0014F581 /* helpers.py */,
 				27CEE72E186D797A0055DECD /* libearth */,
 				27DA9788186ED0020014F581 /* lib */,
 				27CEE6FB186D75A10055DECD /* EarthReader */,
@@ -152,8 +161,12 @@
 				27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */,
 				27DA9780186EBCA90014F581 /* ERPythonSequence.h */,
 				27DA9781186EBCA90014F581 /* ERPythonSequence.m */,
+				27DA978D186EE0730014F581 /* ERPythonMapping.h */,
+				27DA978E186EE0730014F581 /* ERPythonMapping.m */,
 				27DA9783186EC1A10014F581 /* ERSubscriptionList.h */,
 				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
+				27DA978A186ED8F60014F581 /* ERFeed.h */,
+				27DA978B186ED8F60014F581 /* ERFeed.m */,
 			);
 			path = EarthReader;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 			files = (
 				27CEE700186D75A10055DECD /* InfoPlist.strings in Resources */,
 				27CEE708186D75A10055DECD /* Images.xcassets in Resources */,
+				27DA9791186EE9CF0014F581 /* helpers.py in Resources */,
 				27DA9789186ED0020014F581 /* lib in Resources */,
 				27CEE72F186D797A0055DECD /* libearth in Resources */,
 			);
@@ -268,8 +282,10 @@
 			files = (
 				27DA977C186E7D900014F581 /* ERRepo.m in Sources */,
 				27CEE702186D75A10055DECD /* main.m in Sources */,
+				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
 				27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */,
 				27DA9773186E69300014F581 /* ERSession.m in Sources */,
+				27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */,
 				27CEE706186D75A10055DECD /* ERAppDelegate.m in Sources */,
 				27DA9779186E7D540014F581 /* ERStage.m in Sources */,
 				27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */,

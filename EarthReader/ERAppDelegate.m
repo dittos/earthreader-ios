@@ -28,7 +28,7 @@
     [repo print];
     
     ERStage *stage = [[ERStage alloc] initWithSession:session usingRepo:repo];
-    [stage open];
+    [ERStage setCurrentStage:stage];
     
     ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithList:stage.subscriptions];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];

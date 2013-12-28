@@ -27,7 +27,7 @@
 }
 
 - (id)objectAtIndex:(NSUInteger)index {
-    return [[ERPythonObject alloc] initWithHandle:PySequence_GetItem(_backingObject.handle, (Py_ssize_t)index)];
+    return _backingObject[index];
 }
 
 - (id)objectAtIndexedSubscript:(NSUInteger)idx {

@@ -46,6 +46,10 @@
     va_end(va);
     
     PyObject *ret = PyObject_Call(_handle, args, NULL);
+    if (ret == NULL) {
+        PyErr_Print();
+        [NSException raise:@"Python Error" format:@"T_T"];
+    }
     ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:ret];
     Py_XDECREF(ret);
     Py_XDECREF(args);
@@ -57,6 +61,18 @@
     PyObject *attr = PyObject_GetAttrString(_handle, [keyString UTF8String]);
     ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:attr];
     Py_XDECREF(attr);
+    return wrapped;
+}
+
+- (void)setObject:(id)object forKeyedSubscript:(id<NSCopying>)key {
+    NSString *keyString = (NSString *)key; // XXX
+    PyObject_SetAttrString(_handle, [keyString UTF8String], [object handle]);
+}
+
+- (id)objectAtIndexedSubscript:(NSUInteger)idx {
+    PyObject *item = PySequence_GetItem(_handle, (Py_ssize_t)idx);
+    ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:item];
+    Py_XDECREF(item);
     return wrapped;
 }
 

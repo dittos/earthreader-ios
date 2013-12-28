@@ -15,4 +15,8 @@
     return [[ERPythonSequence alloc] initWithWrappedObject:self[@"children"]];
 }
 
+- (ERPythonObject *)subscribe:(ERFeed *)feed {
+    return [self[@"subscribe"] callWithArgs:"(O)", feed.handle];
+}
+
 @end

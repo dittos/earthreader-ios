@@ -7,17 +7,20 @@
 //
 
 #import "ERPythonObject.h"
+#import "ERPythonMapping.h"
 #import "ERSession.h"
 #import "ERRepo.h"
 #import "ERSubscriptionList.h"
 
 @interface ERStage : ERPythonObject
 
++ (ERStage *)currentStage;
++ (void)setCurrentStage:(ERStage *)stage;
+
 - (id)initWithSession:(ERSession *)session usingRepo:(ERRepo *)repo;
+- (void)commit;
 
-- (void)open;
-- (void)close;
-
-@property (readonly) ERSubscriptionList *subscriptions;
+@property (readwrite) ERSubscriptionList *subscriptions;
+@property (readonly) ERPythonMapping *feeds;
 
 @end

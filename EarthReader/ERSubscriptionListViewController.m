@@ -9,6 +9,8 @@
 #import "ERSubscriptionListViewController.h"
 
 #import "ERPythonObject.h"
+#import "ERFeed.h"
+#import "ERStage.h"
 
 @interface ERSubscriptionListViewController ()
 {
@@ -37,12 +39,41 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFeed)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)addFeed {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Add Feed"
+                          message:@"Please enter feed address."
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"Add", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) // Cancel
+        return;
+    
+    NSLog(@"Fetching...");
+    NSString *url = [alertView textFieldAtIndex:0].text;
+    [ERFeed fetchFromURL:url completionHandler:^(ERFeed *feed) {
+        ERPythonObject *sub = [_data subscribe:feed];
+        ERStage *stage = [ERStage currentStage];
+        stage.subscriptions = _data;
+        stage.feeds[[sub[@"feed_id"] stringValue]] = feed;
+        [stage commit];
+        NSLog(@"OK!");
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table view data source

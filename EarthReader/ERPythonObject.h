@@ -17,6 +17,8 @@
 
 - (ERPythonObject *)callWithArgs:(const char *)spec, ...;
 - (id)objectForKeyedSubscript:(id <NSCopying>)key;
+- (void)setObject:(id)object forKeyedSubscript:(id <NSCopying>)key;
+- (id)objectAtIndexedSubscript:(NSUInteger)idx;
 - (void)print;
 
 - (NSString *)stringValue;
