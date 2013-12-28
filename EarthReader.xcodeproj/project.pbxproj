@@ -18,7 +18,6 @@
 		27CEE711186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
 		27CEE727186D77C10055DECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE726186D77C10055DECD /* libsqlite3.dylib */; };
 		27CEE729186D77DE0055DECD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE728186D77DE0055DECD /* libz.dylib */; };
-		27CEE72D186D78AE0055DECD /* include in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE72C186D78AE0055DECD /* include */; };
 		27CEE72F186D797A0055DECD /* libearth in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE72E186D797A0055DECD /* libearth */; };
 		27DA9773186E69300014F581 /* ERSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9772186E69300014F581 /* ERSession.m */; };
 		27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9775186E76C20014F581 /* ERPythonObject.m */; };
@@ -28,6 +27,7 @@
 		27DA9782186EBCA90014F581 /* ERPythonSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9781186EBCA90014F581 /* ERPythonSequence.m */; };
 		27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9784186EC1A10014F581 /* ERSubscriptionList.m */; };
 		27DA9787186EC7250014F581 /* kivy-ios-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DA9786186EC7250014F581 /* kivy-ios-fat.a */; };
+		27DA9789186ED0020014F581 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9788186ED0020014F581 /* lib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		27CEE70D186D75A10055DECD /* EarthReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CEE726186D77C10055DECD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		27CEE728186D77DE0055DECD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		27CEE72C186D78AE0055DECD /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = build/python/include; sourceTree = "<group>"; };
 		27CEE72E186D797A0055DECD /* libearth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libearth; path = libearth/libearth; sourceTree = "<group>"; };
 		27DA9771186E69300014F581 /* ERSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSession.h; sourceTree = "<group>"; };
 		27DA9772186E69300014F581 /* ERSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSession.m; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		27DA9783186EC1A10014F581 /* ERSubscriptionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscriptionList.h; sourceTree = "<group>"; };
 		27DA9784186EC1A10014F581 /* ERSubscriptionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionList.m; sourceTree = "<group>"; };
 		27DA9786186EC7250014F581 /* kivy-ios-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "kivy-ios-fat.a"; path = "build/lib/kivy-ios-fat.a"; sourceTree = "<group>"; };
+		27DA9788186ED0020014F581 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = build/python/lib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				27CEE72E186D797A0055DECD /* libearth */,
-				27CEE72C186D78AE0055DECD /* include */,
+				27DA9788186ED0020014F581 /* lib */,
 				27CEE6FB186D75A10055DECD /* EarthReader */,
 				27CEE6F4186D75A10055DECD /* Frameworks */,
 				27CEE6F3186D75A10055DECD /* Products */,
@@ -247,7 +247,7 @@
 			files = (
 				27CEE700186D75A10055DECD /* InfoPlist.strings in Resources */,
 				27CEE708186D75A10055DECD /* Images.xcassets in Resources */,
-				27CEE72D186D78AE0055DECD /* include in Resources */,
+				27DA9789186ED0020014F581 /* lib in Resources */,
 				27CEE72F186D797A0055DECD /* libearth in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -352,7 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -388,11 +388,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
 				INFOPLIST_FILE = "EarthReader/EarthReader-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -402,11 +405,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
 				INFOPLIST_FILE = "EarthReader/EarthReader-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
