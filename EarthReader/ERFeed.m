@@ -22,9 +22,12 @@
 
 + (ERFeed *)parseData:(NSData *)data url:(NSString *)url contentType:(NSString *)contentType {
     PyObject *body = PyString_FromStringAndSize(data.bytes, data.length);
-    ERPythonObject *t = [[ERPythonObject moduleWithName:"helpers"][@"parse_feed"] callWithArgs:"(Oss)", body, url.UTF8String, contentType.UTF8String];
+    ERPythonObject *parseFeed = [ERPythonObject moduleWithName:"helpers"][@"parse_feed"];
+    ERPythonObject *t = [parseFeed callWithArgs:"(Oss)", body, url.UTF8String, contentType.UTF8String];
     Py_XDECREF(body);
-    return [[ERFeed alloc] initWithWrappedObject:t[0]];
+    if (t)
+        return [[ERFeed alloc] initWithWrappedObject:t[0]];
+    return nil;
 }
 
 @end

@@ -46,14 +46,16 @@
     va_end(va);
     
     PyObject *ret = PyObject_Call(_handle, args, NULL);
+    Py_XDECREF(args);
+    
     if (ret == NULL) {
         PyErr_Print();
-        [NSException raise:@"Python Error" format:@"T_T"];
+        return nil;
+    } else {
+        ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:ret];
+        Py_XDECREF(ret);
+        return wrapped;
     }
-    ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:ret];
-    Py_XDECREF(ret);
-    Py_XDECREF(args);
-    return wrapped;
 }
 
 - (id)objectForKeyedSubscript:(id<NSCopying>)key {

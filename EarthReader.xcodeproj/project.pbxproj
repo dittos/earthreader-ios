@@ -1,511 +1,1389 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		27CEE6F6186D75A10055DECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F5186D75A10055DECD /* Foundation.framework */; };
-		27CEE6F8186D75A10055DECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F7186D75A10055DECD /* CoreGraphics.framework */; };
-		27CEE6FA186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
-		27CEE700186D75A10055DECD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE6FE186D75A10055DECD /* InfoPlist.strings */; };
-		27CEE702186D75A10055DECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE701186D75A10055DECD /* main.m */; };
-		27CEE706186D75A10055DECD /* ERAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE705186D75A10055DECD /* ERAppDelegate.m */; };
-		27CEE708186D75A10055DECD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE707186D75A10055DECD /* Images.xcassets */; };
-		27CEE710186D75A10055DECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F5186D75A10055DECD /* Foundation.framework */; };
-		27CEE711186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
-		27CEE727186D77C10055DECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE726186D77C10055DECD /* libsqlite3.dylib */; };
-		27CEE729186D77DE0055DECD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE728186D77DE0055DECD /* libz.dylib */; };
-		27CEE72F186D797A0055DECD /* libearth in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE72E186D797A0055DECD /* libearth */; };
-		27DA9773186E69300014F581 /* ERSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9772186E69300014F581 /* ERSession.m */; };
-		27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9775186E76C20014F581 /* ERPythonObject.m */; };
-		27DA9779186E7D540014F581 /* ERStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9778186E7D540014F581 /* ERStage.m */; };
-		27DA977C186E7D900014F581 /* ERRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA977B186E7D900014F581 /* ERRepo.m */; };
-		27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */; };
-		27DA9782186EBCA90014F581 /* ERPythonSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9781186EBCA90014F581 /* ERPythonSequence.m */; };
-		27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9784186EC1A10014F581 /* ERSubscriptionList.m */; };
-		27DA9787186EC7250014F581 /* kivy-ios-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DA9786186EC7250014F581 /* kivy-ios-fat.a */; };
-		27DA9789186ED0020014F581 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9788186ED0020014F581 /* lib */; };
-		27DA978C186ED8F60014F581 /* ERFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978B186ED8F60014F581 /* ERFeed.m */; };
-		27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978E186EE0730014F581 /* ERPythonMapping.m */; };
-		27DA9791186EE9CF0014F581 /* helpers.py in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9790186EE9CF0014F581 /* helpers.py */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		27CEE712186D75A10055DECD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 27CEE6EA186D75A10055DECD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27CEE6F1186D75A10055DECD;
-			remoteInfo = EarthReader;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		27CEE6F2186D75A10055DECD /* EarthReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		27CEE6F5186D75A10055DECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		27CEE6F7186D75A10055DECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		27CEE6F9186D75A10055DECD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		27CEE6FD186D75A10055DECD /* EarthReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EarthReader-Info.plist"; sourceTree = "<group>"; };
-		27CEE6FF186D75A10055DECD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		27CEE701186D75A10055DECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		27CEE703186D75A10055DECD /* EarthReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EarthReader-Prefix.pch"; sourceTree = "<group>"; };
-		27CEE704186D75A10055DECD /* ERAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERAppDelegate.h; sourceTree = "<group>"; };
-		27CEE705186D75A10055DECD /* ERAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERAppDelegate.m; sourceTree = "<group>"; };
-		27CEE707186D75A10055DECD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		27CEE70D186D75A10055DECD /* EarthReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		27CEE726186D77C10055DECD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		27CEE728186D77DE0055DECD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		27CEE72E186D797A0055DECD /* libearth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libearth; path = libearth/libearth; sourceTree = "<group>"; };
-		27DA9771186E69300014F581 /* ERSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSession.h; sourceTree = "<group>"; };
-		27DA9772186E69300014F581 /* ERSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSession.m; sourceTree = "<group>"; };
-		27DA9774186E76C20014F581 /* ERPythonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonObject.h; sourceTree = "<group>"; };
-		27DA9775186E76C20014F581 /* ERPythonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonObject.m; sourceTree = "<group>"; };
-		27DA9777186E7D540014F581 /* ERStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERStage.h; sourceTree = "<group>"; };
-		27DA9778186E7D540014F581 /* ERStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERStage.m; sourceTree = "<group>"; };
-		27DA977A186E7D900014F581 /* ERRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERRepo.h; sourceTree = "<group>"; };
-		27DA977B186E7D900014F581 /* ERRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERRepo.m; sourceTree = "<group>"; };
-		27DA977D186EBB9F0014F581 /* ERSubscriptionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscriptionListViewController.h; sourceTree = "<group>"; };
-		27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionListViewController.m; sourceTree = "<group>"; };
-		27DA9780186EBCA90014F581 /* ERPythonSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonSequence.h; sourceTree = "<group>"; };
-		27DA9781186EBCA90014F581 /* ERPythonSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonSequence.m; sourceTree = "<group>"; };
-		27DA9783186EC1A10014F581 /* ERSubscriptionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscriptionList.h; sourceTree = "<group>"; };
-		27DA9784186EC1A10014F581 /* ERSubscriptionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionList.m; sourceTree = "<group>"; };
-		27DA9786186EC7250014F581 /* kivy-ios-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "kivy-ios-fat.a"; path = "build/lib/kivy-ios-fat.a"; sourceTree = "<group>"; };
-		27DA9788186ED0020014F581 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = build/python/lib; sourceTree = "<group>"; };
-		27DA978A186ED8F60014F581 /* ERFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERFeed.h; sourceTree = "<group>"; };
-		27DA978B186ED8F60014F581 /* ERFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERFeed.m; sourceTree = "<group>"; };
-		27DA978D186EE0730014F581 /* ERPythonMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonMapping.h; sourceTree = "<group>"; };
-		27DA978E186EE0730014F581 /* ERPythonMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonMapping.m; sourceTree = "<group>"; };
-		27DA9790186EE9CF0014F581 /* helpers.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = helpers.py; path = EarthReader/helpers.py; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		27CEE6EF186D75A10055DECD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27CEE729186D77DE0055DECD /* libz.dylib in Frameworks */,
-				27CEE727186D77C10055DECD /* libsqlite3.dylib in Frameworks */,
-				27CEE6F8186D75A10055DECD /* CoreGraphics.framework in Frameworks */,
-				27CEE6FA186D75A10055DECD /* UIKit.framework in Frameworks */,
-				27DA9787186EC7250014F581 /* kivy-ios-fat.a in Frameworks */,
-				27CEE6F6186D75A10055DECD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27CEE70A186D75A10055DECD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27CEE711186D75A10055DECD /* UIKit.framework in Frameworks */,
-				27CEE710186D75A10055DECD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		27CEE6E9186D75A10055DECD = {
-			isa = PBXGroup;
-			children = (
-				27DA9790186EE9CF0014F581 /* helpers.py */,
-				27CEE72E186D797A0055DECD /* libearth */,
-				27DA9788186ED0020014F581 /* lib */,
-				27CEE6FB186D75A10055DECD /* EarthReader */,
-				27CEE6F4186D75A10055DECD /* Frameworks */,
-				27CEE6F3186D75A10055DECD /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		27CEE6F3186D75A10055DECD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				27CEE6F2186D75A10055DECD /* EarthReader.app */,
-				27CEE70D186D75A10055DECD /* EarthReaderTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		27CEE6F4186D75A10055DECD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27DA9786186EC7250014F581 /* kivy-ios-fat.a */,
-				27CEE728186D77DE0055DECD /* libz.dylib */,
-				27CEE726186D77C10055DECD /* libsqlite3.dylib */,
-				27CEE6F5186D75A10055DECD /* Foundation.framework */,
-				27CEE6F7186D75A10055DECD /* CoreGraphics.framework */,
-				27CEE6F9186D75A10055DECD /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		27CEE6FB186D75A10055DECD /* EarthReader */ = {
-			isa = PBXGroup;
-			children = (
-				27CEE704186D75A10055DECD /* ERAppDelegate.h */,
-				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
-				27CEE707186D75A10055DECD /* Images.xcassets */,
-				27CEE6FC186D75A10055DECD /* Supporting Files */,
-				27DA9771186E69300014F581 /* ERSession.h */,
-				27DA9772186E69300014F581 /* ERSession.m */,
-				27DA9774186E76C20014F581 /* ERPythonObject.h */,
-				27DA9775186E76C20014F581 /* ERPythonObject.m */,
-				27DA9777186E7D540014F581 /* ERStage.h */,
-				27DA9778186E7D540014F581 /* ERStage.m */,
-				27DA977A186E7D900014F581 /* ERRepo.h */,
-				27DA977B186E7D900014F581 /* ERRepo.m */,
-				27DA977D186EBB9F0014F581 /* ERSubscriptionListViewController.h */,
-				27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */,
-				27DA9780186EBCA90014F581 /* ERPythonSequence.h */,
-				27DA9781186EBCA90014F581 /* ERPythonSequence.m */,
-				27DA978D186EE0730014F581 /* ERPythonMapping.h */,
-				27DA978E186EE0730014F581 /* ERPythonMapping.m */,
-				27DA9783186EC1A10014F581 /* ERSubscriptionList.h */,
-				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
-				27DA978A186ED8F60014F581 /* ERFeed.h */,
-				27DA978B186ED8F60014F581 /* ERFeed.m */,
-			);
-			path = EarthReader;
-			sourceTree = "<group>";
-		};
-		27CEE6FC186D75A10055DECD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				27CEE6FD186D75A10055DECD /* EarthReader-Info.plist */,
-				27CEE6FE186D75A10055DECD /* InfoPlist.strings */,
-				27CEE701186D75A10055DECD /* main.m */,
-				27CEE703186D75A10055DECD /* EarthReader-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		27CEE6F1186D75A10055DECD /* EarthReader */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27CEE71E186D75A10055DECD /* Build configuration list for PBXNativeTarget "EarthReader" */;
-			buildPhases = (
-				27CEE6EE186D75A10055DECD /* Sources */,
-				27CEE6EF186D75A10055DECD /* Frameworks */,
-				27CEE6F0186D75A10055DECD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = EarthReader;
-			productName = EarthReader;
-			productReference = 27CEE6F2186D75A10055DECD /* EarthReader.app */;
-			productType = "com.apple.product-type.application";
-		};
-		27CEE70C186D75A10055DECD /* EarthReaderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 27CEE721186D75A10055DECD /* Build configuration list for PBXNativeTarget "EarthReaderTests" */;
-			buildPhases = (
-				27CEE709186D75A10055DECD /* Sources */,
-				27CEE70A186D75A10055DECD /* Frameworks */,
-				27CEE70B186D75A10055DECD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				27CEE713186D75A10055DECD /* PBXTargetDependency */,
-			);
-			name = EarthReaderTests;
-			productName = EarthReaderTests;
-			productReference = 27CEE70D186D75A10055DECD /* EarthReaderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		27CEE6EA186D75A10055DECD /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = ER;
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Earth Reader";
-				TargetAttributes = {
-					27CEE70C186D75A10055DECD = {
-						TestTargetID = 27CEE6F1186D75A10055DECD;
-					};
-				};
-			};
-			buildConfigurationList = 27CEE6ED186D75A10055DECD /* Build configuration list for PBXProject "EarthReader" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 27CEE6E9186D75A10055DECD;
-			productRefGroup = 27CEE6F3186D75A10055DECD /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				27CEE6F1186D75A10055DECD /* EarthReader */,
-				27CEE70C186D75A10055DECD /* EarthReaderTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		27CEE6F0186D75A10055DECD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27CEE700186D75A10055DECD /* InfoPlist.strings in Resources */,
-				27CEE708186D75A10055DECD /* Images.xcassets in Resources */,
-				27DA9791186EE9CF0014F581 /* helpers.py in Resources */,
-				27DA9789186ED0020014F581 /* lib in Resources */,
-				27CEE72F186D797A0055DECD /* libearth in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27CEE70B186D75A10055DECD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		27CEE6EE186D75A10055DECD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27DA977C186E7D900014F581 /* ERRepo.m in Sources */,
-				27CEE702186D75A10055DECD /* main.m in Sources */,
-				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
-				27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */,
-				27DA9773186E69300014F581 /* ERSession.m in Sources */,
-				27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */,
-				27CEE706186D75A10055DECD /* ERAppDelegate.m in Sources */,
-				27DA9779186E7D540014F581 /* ERStage.m in Sources */,
-				27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */,
-				27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */,
-				27DA9782186EBCA90014F581 /* ERPythonSequence.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27CEE709186D75A10055DECD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		27CEE713186D75A10055DECD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27CEE6F1186D75A10055DECD /* EarthReader */;
-			targetProxy = 27CEE712186D75A10055DECD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		27CEE6FE186D75A10055DECD /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27CEE6FF186D75A10055DECD /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		27CEE71C186D75A10055DECD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/build/python/include $(PROJECT_DIR)/build/include";
-			};
-			name = Debug;
-		};
-		27CEE71D186D75A10055DECD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = armv7;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/build/python/include $(PROJECT_DIR)/build/include";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		27CEE71F186D75A10055DECD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
-				INFOPLIST_FILE = "EarthReader/EarthReader-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		27CEE720186D75A10055DECD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
-				INFOPLIST_FILE = "EarthReader/EarthReader-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		27CEE722186D75A10055DECD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EarthReader.app/EarthReader";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "EarthReaderTests/EarthReaderTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		27CEE723186D75A10055DECD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EarthReader.app/EarthReader";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EarthReader/EarthReader-Prefix.pch";
-				INFOPLIST_FILE = "EarthReaderTests/EarthReaderTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		27CEE6ED186D75A10055DECD /* Build configuration list for PBXProject "EarthReader" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27CEE71C186D75A10055DECD /* Debug */,
-				27CEE71D186D75A10055DECD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27CEE71E186D75A10055DECD /* Build configuration list for PBXNativeTarget "EarthReader" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27CEE71F186D75A10055DECD /* Debug */,
-				27CEE720186D75A10055DECD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27CEE721186D75A10055DECD /* Build configuration list for PBXNativeTarget "EarthReaderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				27CEE722186D75A10055DECD /* Debug */,
-				27CEE723186D75A10055DECD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 27CEE6EA186D75A10055DECD /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>04E24044CEF94B66B35D1151</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1BB2CD8A46164308A3D4F577</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1BB2CD8A46164308A3D4F577</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>27CEE6E9186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27DA9790186EE9CF0014F581</string>
+				<string>27CEE72E186D797A0055DECD</string>
+				<string>27DA9788186ED0020014F581</string>
+				<string>27CEE6FB186D75A10055DECD</string>
+				<string>27CEE6F4186D75A10055DECD</string>
+				<string>27CEE6F3186D75A10055DECD</string>
+				<string>DEF22E62BE3D4030B6F478DE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6EA186D75A10055DECD</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>ER</string>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Earth Reader</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>27CEE70C186D75A10055DECD</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>27CEE6F1186D75A10055DECD</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>27CEE6ED186D75A10055DECD</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>27CEE6E9186D75A10055DECD</string>
+			<key>productRefGroup</key>
+			<string>27CEE6F3186D75A10055DECD</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>27CEE6F1186D75A10055DECD</string>
+				<string>27CEE70C186D75A10055DECD</string>
+			</array>
+		</dict>
+		<key>27CEE6ED186D75A10055DECD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>27CEE71C186D75A10055DECD</string>
+				<string>27CEE71D186D75A10055DECD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>27CEE6EE186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>27DA977C186E7D900014F581</string>
+				<string>27CEE702186D75A10055DECD</string>
+				<string>27DA978C186ED8F60014F581</string>
+				<string>27DA977F186EBB9F0014F581</string>
+				<string>27DA9773186E69300014F581</string>
+				<string>27DA978F186EE0730014F581</string>
+				<string>27CEE706186D75A10055DECD</string>
+				<string>27DA9779186E7D540014F581</string>
+				<string>27DA9785186EC1A10014F581</string>
+				<string>27DA9776186E76C20014F581</string>
+				<string>27DA9782186EBCA90014F581</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE6EF186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>27CEE729186D77DE0055DECD</string>
+				<string>27CEE727186D77C10055DECD</string>
+				<string>27CEE6F8186D75A10055DECD</string>
+				<string>27CEE6FA186D75A10055DECD</string>
+				<string>27DA9787186EC7250014F581</string>
+				<string>27CEE6F6186D75A10055DECD</string>
+				<string>04E24044CEF94B66B35D1151</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE6F0186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>27CEE700186D75A10055DECD</string>
+				<string>27CEE708186D75A10055DECD</string>
+				<string>27DA9791186EE9CF0014F581</string>
+				<string>27DA9789186ED0020014F581</string>
+				<string>27CEE72F186D797A0055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE6F1186D75A10055DECD</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>27CEE71E186D75A10055DECD</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6188C763D4774479906C3F2D</string>
+				<string>27CEE6EE186D75A10055DECD</string>
+				<string>27CEE6EF186D75A10055DECD</string>
+				<string>27CEE6F0186D75A10055DECD</string>
+				<string>E9BCD1AC5A124C9BB831A259</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>EarthReader</string>
+			<key>productName</key>
+			<string>EarthReader</string>
+			<key>productReference</key>
+			<string>27CEE6F2186D75A10055DECD</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>27CEE6F2186D75A10055DECD</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>EarthReader.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>27CEE6F3186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27CEE6F2186D75A10055DECD</string>
+				<string>27CEE70D186D75A10055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6F4186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27DA9786186EC7250014F581</string>
+				<string>27CEE728186D77DE0055DECD</string>
+				<string>27CEE726186D77C10055DECD</string>
+				<string>27CEE6F5186D75A10055DECD</string>
+				<string>27CEE6F7186D75A10055DECD</string>
+				<string>27CEE6F9186D75A10055DECD</string>
+				<string>1BB2CD8A46164308A3D4F577</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6F5186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>27CEE6F6186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6F5186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE6F7186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>27CEE6F8186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6F7186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE6F9186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>27CEE6FA186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6F9186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE6FB186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27CEE704186D75A10055DECD</string>
+				<string>27CEE705186D75A10055DECD</string>
+				<string>27CEE707186D75A10055DECD</string>
+				<string>27CEE6FC186D75A10055DECD</string>
+				<string>27DA9771186E69300014F581</string>
+				<string>27DA9772186E69300014F581</string>
+				<string>27DA9774186E76C20014F581</string>
+				<string>27DA9775186E76C20014F581</string>
+				<string>27DA9777186E7D540014F581</string>
+				<string>27DA9778186E7D540014F581</string>
+				<string>27DA977A186E7D900014F581</string>
+				<string>27DA977B186E7D900014F581</string>
+				<string>27DA977D186EBB9F0014F581</string>
+				<string>27DA977E186EBB9F0014F581</string>
+				<string>27DA9780186EBCA90014F581</string>
+				<string>27DA9781186EBCA90014F581</string>
+				<string>27DA978D186EE0730014F581</string>
+				<string>27DA978E186EE0730014F581</string>
+				<string>27DA9783186EC1A10014F581</string>
+				<string>27DA9784186EC1A10014F581</string>
+				<string>27DA978A186ED8F60014F581</string>
+				<string>27DA978B186ED8F60014F581</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>EarthReader</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6FC186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27CEE6FD186D75A10055DECD</string>
+				<string>27CEE6FE186D75A10055DECD</string>
+				<string>27CEE701186D75A10055DECD</string>
+				<string>27CEE703186D75A10055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6FD186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>EarthReader-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6FE186D75A10055DECD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>27CEE6FF186D75A10055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE6FF186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE700186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6FE186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE701186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE702186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE701186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE703186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>EarthReader-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE704186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE705186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE706186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE705186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE707186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE708186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE707186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE709186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE70A186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>27CEE711186D75A10055DECD</string>
+				<string>27CEE710186D75A10055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE70B186D75A10055DECD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>27CEE70C186D75A10055DECD</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>27CEE721186D75A10055DECD</string>
+			<key>buildPhases</key>
+			<array>
+				<string>27CEE709186D75A10055DECD</string>
+				<string>27CEE70A186D75A10055DECD</string>
+				<string>27CEE70B186D75A10055DECD</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>27CEE713186D75A10055DECD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>EarthReaderTests</string>
+			<key>productName</key>
+			<string>EarthReaderTests</string>
+			<key>productReference</key>
+			<string>27CEE70D186D75A10055DECD</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>27CEE70D186D75A10055DECD</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>EarthReaderTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>27CEE710186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6F5186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE711186D75A10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE6F9186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE712186D75A10055DECD</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>27CEE6EA186D75A10055DECD</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>27CEE6F1186D75A10055DECD</string>
+			<key>remoteInfo</key>
+			<string>EarthReader</string>
+		</dict>
+		<key>27CEE713186D75A10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>27CEE6F1186D75A10055DECD</string>
+			<key>targetProxy</key>
+			<string>27CEE712186D75A10055DECD</string>
+		</dict>
+		<key>27CEE71C186D75A10055DECD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>armv7</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>$(PROJECT_DIR)/build/python/include $(PROJECT_DIR)/build/include</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>27CEE71D186D75A10055DECD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>armv7</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>USER_HEADER_SEARCH_PATHS</key>
+				<string>$(PROJECT_DIR)/build/python/include $(PROJECT_DIR)/build/include</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>27CEE71E186D75A10055DECD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>27CEE71F186D75A10055DECD</string>
+				<string>27CEE720186D75A10055DECD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>27CEE71F186D75A10055DECD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>DEF22E62BE3D4030B6F478DE</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>EarthReader/EarthReader-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>EarthReader/EarthReader-Info.plist</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<string>$(inherited)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>27CEE720186D75A10055DECD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>DEF22E62BE3D4030B6F478DE</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>EarthReader/EarthReader-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>EarthReader/EarthReader-Info.plist</string>
+				<key>LIBRARY_SEARCH_PATHS</key>
+				<string>$(inherited)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>27CEE721186D75A10055DECD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>27CEE722186D75A10055DECD</string>
+				<string>27CEE723186D75A10055DECD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>27CEE722186D75A10055DECD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/EarthReader.app/EarthReader</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>EarthReader/EarthReader-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>EarthReaderTests/EarthReaderTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>27CEE723186D75A10055DECD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/EarthReader.app/EarthReader</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>EarthReader/EarthReader-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>EarthReaderTests/EarthReaderTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>27CEE726186D77C10055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>compiled.mach-o.dylib</string>
+			<key>name</key>
+			<string>libsqlite3.dylib</string>
+			<key>path</key>
+			<string>usr/lib/libsqlite3.dylib</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>27CEE727186D77C10055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE726186D77C10055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE728186D77DE0055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>compiled.mach-o.dylib</string>
+			<key>name</key>
+			<string>libz.dylib</string>
+			<key>path</key>
+			<string>usr/lib/libz.dylib</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>27CEE729186D77DE0055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE728186D77DE0055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27CEE72E186D797A0055DECD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder</string>
+			<key>name</key>
+			<string>libearth</string>
+			<key>path</key>
+			<string>libearth/libearth</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27CEE72F186D797A0055DECD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27CEE72E186D797A0055DECD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9771186E69300014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERSession.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9772186E69300014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERSession.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9773186E69300014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9772186E69300014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9774186E76C20014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERPythonObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9775186E76C20014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERPythonObject.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9776186E76C20014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9775186E76C20014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9777186E7D540014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERStage.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9778186E7D540014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERStage.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9779186E7D540014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9778186E7D540014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA977A186E7D900014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERRepo.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA977B186E7D900014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERRepo.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA977C186E7D900014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA977B186E7D900014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA977D186EBB9F0014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERSubscriptionListViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA977E186EBB9F0014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERSubscriptionListViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA977F186EBB9F0014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA977E186EBB9F0014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9780186EBCA90014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERPythonSequence.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9781186EBCA90014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERPythonSequence.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9782186EBCA90014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9781186EBCA90014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9783186EC1A10014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERSubscriptionList.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9784186EC1A10014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERSubscriptionList.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9785186EC1A10014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9784186EC1A10014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9786186EC7250014F581</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>kivy-ios-fat.a</string>
+			<key>path</key>
+			<string>build/lib/kivy-ios-fat.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9787186EC7250014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9786186EC7250014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9788186ED0020014F581</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder</string>
+			<key>name</key>
+			<string>lib</string>
+			<key>path</key>
+			<string>build/python/lib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9789186ED0020014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9788186ED0020014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA978A186ED8F60014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERFeed.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA978B186ED8F60014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERFeed.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA978C186ED8F60014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA978B186ED8F60014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA978D186EE0730014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ERPythonMapping.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA978E186EE0730014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ERPythonMapping.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA978F186EE0730014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA978E186EE0730014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>27DA9790186EE9CF0014F581</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.python</string>
+			<key>name</key>
+			<string>helpers.py</string>
+			<key>path</key>
+			<string>EarthReader/helpers.py</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27DA9791186EE9CF0014F581</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27DA9790186EE9CF0014F581</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6188C763D4774479906C3F2D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>DEF22E62BE3D4030B6F478DE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E9BCD1AC5A124C9BB831A259</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>27CEE6EA186D75A10055DECD</string>
+</dict>
+</plist>

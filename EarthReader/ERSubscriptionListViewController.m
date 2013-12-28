@@ -12,6 +12,8 @@
 #import "ERFeed.h"
 #import "ERStage.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
+
 @interface ERSubscriptionListViewController ()
 {
     __strong ERSubscriptionList *_data;
@@ -65,13 +67,20 @@
     
     NSLog(@"Fetching...");
     NSString *url = [alertView textFieldAtIndex:0].text;
+    [SVProgressHUD show];
     [ERFeed fetchFromURL:url completionHandler:^(ERFeed *feed) {
+        if (!feed) {
+            [SVProgressHUD showErrorWithStatus:@"Error"];
+            return;
+        }
+        
         ERPythonObject *sub = [_data subscribe:feed];
         ERStage *stage = [ERStage currentStage];
         stage.subscriptions = _data;
         stage.feeds[[sub[@"feed_id"] stringValue]] = feed;
         [stage commit];
         NSLog(@"OK!");
+        [SVProgressHUD dismiss];
         [self.tableView reloadData];
     }];
 }
