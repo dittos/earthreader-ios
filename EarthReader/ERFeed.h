@@ -8,8 +8,6 @@
 
 #import "ERPythonObject.h"
 
-#import "EREntry.h"
-
 @interface ERFeed : ERPythonObject
 
 + (void)fetchFromURL:(NSString *)url

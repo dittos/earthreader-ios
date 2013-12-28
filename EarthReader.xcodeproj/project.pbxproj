@@ -158,26 +158,9 @@
 				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
 				27CEE707186D75A10055DECD /* Images.xcassets */,
 				27CEE6FC186D75A10055DECD /* Supporting Files */,
-				27DA9771186E69300014F581 /* ERSession.h */,
-				27DA9772186E69300014F581 /* ERSession.m */,
-				27DA9774186E76C20014F581 /* ERPythonObject.h */,
-				27DA9775186E76C20014F581 /* ERPythonObject.m */,
-				27DA9777186E7D540014F581 /* ERStage.h */,
-				27DA9778186E7D540014F581 /* ERStage.m */,
-				27DA977A186E7D900014F581 /* ERRepo.h */,
-				27DA977B186E7D900014F581 /* ERRepo.m */,
-				27DA977D186EBB9F0014F581 /* ERSubscriptionListViewController.h */,
-				27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */,
-				27DA9780186EBCA90014F581 /* ERPythonSequence.h */,
-				27DA9781186EBCA90014F581 /* ERPythonSequence.m */,
-				27DA978D186EE0730014F581 /* ERPythonMapping.h */,
-				27DA978E186EE0730014F581 /* ERPythonMapping.m */,
-				27DA9783186EC1A10014F581 /* ERSubscriptionList.h */,
-				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
-				27DA978A186ED8F60014F581 /* ERFeed.h */,
-				27DA978B186ED8F60014F581 /* ERFeed.m */,
-				27DA9792186EF65C0014F581 /* ERFeedViewController.h */,
-				27DA9793186EF65C0014F581 /* ERFeedViewController.m */,
+				27DA9798186EFF580014F581 /* Python Bridge */,
+				27DA9799186EFF7B0014F581 /* Models */,
+				27DA979A186EFF8A0014F581 /* View Controllers */,
 			);
 			path = EarthReader;
 			sourceTree = "<group>";
@@ -191,6 +174,47 @@
 				27CEE703186D75A10055DECD /* EarthReader-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27DA9798186EFF580014F581 /* Python Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				27DA9774186E76C20014F581 /* ERPythonObject.h */,
+				27DA9775186E76C20014F581 /* ERPythonObject.m */,
+				27DA9780186EBCA90014F581 /* ERPythonSequence.h */,
+				27DA9781186EBCA90014F581 /* ERPythonSequence.m */,
+				27DA978D186EE0730014F581 /* ERPythonMapping.h */,
+				27DA978E186EE0730014F581 /* ERPythonMapping.m */,
+			);
+			name = "Python Bridge";
+			sourceTree = "<group>";
+		};
+		27DA9799186EFF7B0014F581 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27DA9771186E69300014F581 /* ERSession.h */,
+				27DA9772186E69300014F581 /* ERSession.m */,
+				27DA9777186E7D540014F581 /* ERStage.h */,
+				27DA9778186E7D540014F581 /* ERStage.m */,
+				27DA977A186E7D900014F581 /* ERRepo.h */,
+				27DA977B186E7D900014F581 /* ERRepo.m */,
+				27DA9783186EC1A10014F581 /* ERSubscriptionList.h */,
+				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
+				27DA978A186ED8F60014F581 /* ERFeed.h */,
+				27DA978B186ED8F60014F581 /* ERFeed.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		27DA979A186EFF8A0014F581 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27DA977D186EBB9F0014F581 /* ERSubscriptionListViewController.h */,
+				27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */,
+				27DA9792186EF65C0014F581 /* ERFeedViewController.h */,
+				27DA9793186EF65C0014F581 /* ERFeedViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
