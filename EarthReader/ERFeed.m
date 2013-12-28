@@ -8,6 +8,8 @@
 
 #import "ERFeed.h"
 
+#import "ERPythonSequence.h"
+
 @implementation ERFeed
 
 + (void)fetchFromURL:(NSString *)url
@@ -28,6 +30,10 @@
     if (t)
         return [[ERFeed alloc] initWithWrappedObject:t[0]];
     return nil;
+}
+
+- (NSArray *)entries {
+    return [[ERPythonSequence alloc] initWithWrappedObject:self[@"entries"]];
 }
 
 @end

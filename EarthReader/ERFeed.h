@@ -8,9 +8,13 @@
 
 #import "ERPythonObject.h"
 
+#import "EREntry.h"
+
 @interface ERFeed : ERPythonObject
 
 + (void)fetchFromURL:(NSString *)url
    completionHandler:(void(^)(ERFeed *))completionBlock;
+
+@property (readonly) NSArray *entries;
 
 @end

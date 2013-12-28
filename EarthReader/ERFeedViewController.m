@@ -1,33 +1,26 @@
 //
-//  ERSubscriptionListViewController.m
+//  ERFeedViewController.m
 //  EarthReader
 //
 //  Created by 김태호 on 2013. 12. 28..
 //  Copyright (c) 2013년 Earth Reader. All rights reserved.
 //
 
-#import "ERSubscriptionListViewController.h"
-
-#import "ERPythonObject.h"
-#import "ERFeed.h"
-#import "ERStage.h"
-
 #import "ERFeedViewController.h"
 
-#import <SVProgressHUD/SVProgressHUD.h>
-
-@interface ERSubscriptionListViewController ()
+@interface ERFeedViewController ()
 {
-    __strong ERSubscriptionList *_data;
+    ERFeed *_feed;
 }
 @end
 
-@implementation ERSubscriptionListViewController
+@implementation ERFeedViewController
 
-- (id)initWithList:(ERSubscriptionList *)list {
+- (id)initWithObject:(ERFeed *)feed
+{
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        _data = list;
+        _feed = feed;
     }
     return self;
 }
@@ -36,55 +29,19 @@
 {
     [super viewDidLoad];
     
-    [self.tableView reloadData];
+    self.title = [_feed[@"title"][@"value"] stringValue];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addFeed)];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)addFeed {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Add Feed"
-                          message:@"Please enter feed address."
-                          delegate:self
-                          cancelButtonTitle:@"Cancel"
-                          otherButtonTitles:@"Add", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) // Cancel
-        return;
-    
-    NSLog(@"Fetching...");
-    NSString *url = [alertView textFieldAtIndex:0].text;
-    [SVProgressHUD show];
-    [ERFeed fetchFromURL:url completionHandler:^(ERFeed *feed) {
-        if (!feed) {
-            [SVProgressHUD showErrorWithStatus:@"Error"];
-            return;
-        }
-        
-        ERPythonObject *sub = [_data subscribe:feed];
-        ERStage *stage = [ERStage currentStage];
-        stage.subscriptions = _data;
-        stage.feeds[[sub[@"feed_id"] stringValue]] = feed;
-        [stage commit];
-        NSLog(@"OK!");
-        [SVProgressHUD dismiss];
-        [self.tableView reloadData];
-    }];
 }
 
 #pragma mark - Table view data source
@@ -96,30 +53,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _data.children.count;
+    return _feed.entries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"EntryCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    ERPythonObject *subscription = _data.children[indexPath.row];
-    cell.textLabel.text = [subscription[@"label"] stringValue];
+    ERPythonObject *entry = _feed.entries[indexPath.row];
+    cell.textLabel.text = [entry[@"title"][@"value"] stringValue];
+    cell.detailTextLabel.text = [[entry[@"updated_at"][@"__str__"] callWithArgs:"()"] stringValue];
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ERPythonObject *subscription = _data.children[indexPath.row];
-    NSString *feedId = [subscription[@"feed_id"] stringValue];
-    ERFeed *feed = [[ERFeed alloc] initWithWrappedObject:[ERStage currentStage].feeds[feedId]];
-    ERFeedViewController *vc = [[ERFeedViewController alloc] initWithObject:feed];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*
