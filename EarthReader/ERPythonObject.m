@@ -85,11 +85,14 @@
 
 - (NSString *)stringValue {
     PyObject *str = _handle;
+    PyObject *unicode = NULL;
     if (PyUnicode_Check(str)) {
-        str = PyUnicode_AsUTF8String(str);
+        unicode = PyUnicode_AsUTF8String(str);
+        str = unicode;
     }
-    // TODO: deref str
-    return [[NSString alloc] initWithCString:PyString_AsString(str) encoding:NSUTF8StringEncoding];
+    NSString *ret = [NSString stringWithUTF8String:PyString_AsString(str)];
+    Py_XDECREF(unicode);
+    return ret;
 }
 
 - (void)dealloc {
