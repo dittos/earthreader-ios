@@ -7,6 +7,7 @@
 //
 
 #import "ERFeedViewController.h"
+#import "EREntryViewController.h"
 
 @interface ERFeedViewController ()
 {
@@ -70,6 +71,12 @@
     cell.detailTextLabel.text = [[entry[@"updated_at"][@"__str__"] callWithArgs:"()"] stringValue];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ERPythonObject *entry = _feed.entries[indexPath.row];
+    EREntryViewController *vc = [[EREntryViewController alloc] initWithObject:entry];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

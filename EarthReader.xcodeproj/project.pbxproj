@@ -20,6 +20,7 @@
 		27CEE727186D77C10055DECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE726186D77C10055DECD /* libsqlite3.dylib */; };
 		27CEE729186D77DE0055DECD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE728186D77DE0055DECD /* libz.dylib */; };
 		27CEE72F186D797A0055DECD /* libearth in Resources */ = {isa = PBXBuildFile; fileRef = 27CEE72E186D797A0055DECD /* libearth */; };
+		27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE7311870F36A0055DECD /* EREntryViewController.m */; };
 		27DA9773186E69300014F581 /* ERSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9772186E69300014F581 /* ERSession.m */; };
 		27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9775186E76C20014F581 /* ERPythonObject.m */; };
 		27DA9779186E7D540014F581 /* ERStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9778186E7D540014F581 /* ERStage.m */; };
@@ -62,6 +63,8 @@
 		27CEE726186D77C10055DECD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		27CEE728186D77DE0055DECD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		27CEE72E186D797A0055DECD /* libearth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libearth; path = libearth/libearth; sourceTree = "<group>"; };
+		27CEE7301870F36A0055DECD /* EREntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EREntryViewController.h; sourceTree = "<group>"; };
+		27CEE7311870F36A0055DECD /* EREntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EREntryViewController.m; sourceTree = "<group>"; };
 		27DA9771186E69300014F581 /* ERSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSession.h; sourceTree = "<group>"; };
 		27DA9772186E69300014F581 /* ERSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSession.m; sourceTree = "<group>"; };
 		27DA9774186E76C20014F581 /* ERPythonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonObject.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */,
 				27DA9792186EF65C0014F581 /* ERFeedViewController.h */,
 				27DA9793186EF65C0014F581 /* ERFeedViewController.m */,
+				27CEE7301870F36A0055DECD /* EREntryViewController.h */,
+				27CEE7311870F36A0055DECD /* EREntryViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				27DA977C186E7D900014F581 /* ERRepo.m in Sources */,
 				27CEE702186D75A10055DECD /* main.m in Sources */,
 				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
+				27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */,
 				27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */,
 				27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */,
 				27DA9773186E69300014F581 /* ERSession.m in Sources */,
