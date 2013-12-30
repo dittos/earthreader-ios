@@ -13,4 +13,4 @@ def parse_feed(feed_xml, feed_url, content_type):
                                mimetype=content_type))
     feed.entries = sorted(feed.entries, key=lambda entry: entry.updated_at,
                           reverse=True)
-    return feed, crawler_hints
+    return feed_url, feed, crawler_hints

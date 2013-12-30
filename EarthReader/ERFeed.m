@@ -28,7 +28,7 @@
     ERPythonObject *t = [parseFeed callWithArgs:"(Oss)", body, url.UTF8String, contentType.UTF8String];
     Py_XDECREF(body);
     if (t)
-        return [[ERFeed alloc] initWithWrappedObject:t[0]];
+        return [[ERFeed alloc] initWithWrappedObject:t[1]];
     return nil;
 }
 

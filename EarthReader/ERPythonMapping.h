@@ -12,6 +12,7 @@
 @interface ERPythonMapping : NSMutableDictionary
 
 - (id)initWithWrappedObject:(ERPythonObject *)object;
+- (id)initWithWrappedObject:(ERPythonObject *)object valueClass:(Class)cls;
 
 - (id)objectForKey:(id)aKey;
 - (id)objectForKeyedSubscript:(id)key;

@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "ERFeed.h"
+#import "ERSubscription.h"
 
 @interface ERFeedViewController : UITableViewController
 
-- (id)initWithObject:(ERFeed *)feed;
+- (id)initWithObject:(ERSubscription *)subscription;
 
 @end

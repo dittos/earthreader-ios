@@ -52,7 +52,7 @@ static ERStage *_currentStage = nil;
 }
 
 - (ERPythonMapping *)feeds {
-    return [[ERPythonMapping alloc] initWithWrappedObject:self[@"feeds"]];
+    return [[ERPythonMapping alloc] initWithWrappedObject:self[@"feeds"] valueClass:[ERFeed class]];
 }
 
 @end

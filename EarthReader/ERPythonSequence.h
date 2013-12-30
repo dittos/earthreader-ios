@@ -12,6 +12,7 @@
 @interface ERPythonSequence : NSArray
 
 - (id)initWithWrappedObject:(ERPythonObject *)object;
+- (id)initWithWrappedObject:(ERPythonObject *)object elementClass:(Class)cls;
 
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;

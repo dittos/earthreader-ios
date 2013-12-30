@@ -8,20 +8,26 @@
 
 #import "ERFeedViewController.h"
 #import "EREntryViewController.h"
+#import "ERStage.h"
+#import "ERCrawler.h"
+
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface ERFeedViewController ()
 {
+    ERSubscription *_sub;
     ERFeed *_feed;
 }
 @end
 
 @implementation ERFeedViewController
 
-- (id)initWithObject:(ERFeed *)feed
+- (id)initWithObject:(ERSubscription *)subscription
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        _feed = feed;
+        _sub = subscription;
+        [self loadFeed];
     }
     return self;
 }
@@ -31,6 +37,8 @@
     [super viewDidLoad];
     
     self.title = [_feed[@"title"][@"value"] stringValue];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFeed)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,6 +51,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadFeed {
+    _feed = [[ERFeed alloc] initWithWrappedObject:[ERStage currentStage].feeds[_sub.feedID]];
+}
+
+- (void)refreshFeed {
+    [SVProgressHUD show];
+    [[ERCrawler sharedCrawler] refresh:_sub completionHandler:^(ERSubscription *sub, ERFeed *feed) {
+        if (!feed) {
+            [SVProgressHUD showErrorWithStatus:@"Error"];
+            return;
+        }
+        
+        NSLog(@"OK!");
+        [SVProgressHUD dismiss];
+        [self loadFeed];
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table view data source

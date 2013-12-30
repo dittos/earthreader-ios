@@ -34,6 +34,8 @@
 		27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978E186EE0730014F581 /* ERPythonMapping.m */; };
 		27DA9791186EE9CF0014F581 /* helpers.py in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9790186EE9CF0014F581 /* helpers.py */; };
 		27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9793186EF65C0014F581 /* ERFeedViewController.m */; };
+		27F07D1E1871C48B001686E7 /* ERCrawler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F07D1D1871C48B001686E7 /* ERCrawler.m */; };
+		27F07D241871CAF0001686E7 /* ERSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F07D231871CAF0001686E7 /* ERSubscription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,10 @@
 		27DA9790186EE9CF0014F581 /* helpers.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = helpers.py; path = EarthReader/helpers.py; sourceTree = "<group>"; };
 		27DA9792186EF65C0014F581 /* ERFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERFeedViewController.h; sourceTree = "<group>"; };
 		27DA9793186EF65C0014F581 /* ERFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERFeedViewController.m; sourceTree = "<group>"; };
+		27F07D1C1871C48B001686E7 /* ERCrawler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCrawler.h; sourceTree = "<group>"; };
+		27F07D1D1871C48B001686E7 /* ERCrawler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCrawler.m; sourceTree = "<group>"; };
+		27F07D221871CAF0001686E7 /* ERSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscription.h; sourceTree = "<group>"; };
+		27F07D231871CAF0001686E7 /* ERSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscription.m; sourceTree = "<group>"; };
 		DEF22E62BE3D4030B6F478DE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,8 @@
 			children = (
 				27CEE704186D75A10055DECD /* ERAppDelegate.h */,
 				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
+				27F07D1C1871C48B001686E7 /* ERCrawler.h */,
+				27F07D1D1871C48B001686E7 /* ERCrawler.m */,
 				27CEE707186D75A10055DECD /* Images.xcassets */,
 				27CEE6FC186D75A10055DECD /* Supporting Files */,
 				27DA9798186EFF580014F581 /* Python Bridge */,
@@ -205,6 +213,8 @@
 				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
 				27DA978A186ED8F60014F581 /* ERFeed.h */,
 				27DA978B186ED8F60014F581 /* ERFeed.m */,
+				27F07D221871CAF0001686E7 /* ERSubscription.h */,
+				27F07D231871CAF0001686E7 /* ERSubscription.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -357,6 +367,7 @@
 			files = (
 				27DA977C186E7D900014F581 /* ERRepo.m in Sources */,
 				27CEE702186D75A10055DECD /* main.m in Sources */,
+				27F07D241871CAF0001686E7 /* ERSubscription.m in Sources */,
 				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
 				27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */,
 				27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */,
@@ -364,6 +375,7 @@
 				27DA9773186E69300014F581 /* ERSession.m in Sources */,
 				27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */,
 				27CEE706186D75A10055DECD /* ERAppDelegate.m in Sources */,
+				27F07D1E1871C48B001686E7 /* ERCrawler.m in Sources */,
 				27DA9779186E7D540014F581 /* ERStage.m in Sources */,
 				27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */,
 				27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */,

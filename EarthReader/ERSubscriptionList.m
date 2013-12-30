@@ -8,15 +8,17 @@
 
 #import "ERSubscriptionList.h"
 #import "ERPythonSequence.h"
+#import "ERSubscription.h"
 
 @implementation ERSubscriptionList
 
 - (NSArray *)children {
-    return [[ERPythonSequence alloc] initWithWrappedObject:self[@"children"]];
+    // TODO: handle categories
+    return [[ERPythonSequence alloc] initWithWrappedObject:self[@"children"] elementClass:[ERSubscription class]];
 }
 
-- (ERPythonObject *)subscribe:(ERFeed *)feed {
-    return [self[@"subscribe"] callWithArgs:"(O)", feed.handle];
+- (ERSubscription *)subscribe:(ERFeed *)feed {
+    return [[ERSubscription alloc] initWithWrappedObject:[self[@"subscribe"] callWithArgs:"(O)", feed.handle]];
 }
 
 @end

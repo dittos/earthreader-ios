@@ -10,21 +10,27 @@
 
 @interface ERPythonMapping () {
     __strong ERPythonObject *_backingObject;
+    Class _valueClass;
 }
 @end
 
 @implementation ERPythonMapping
 
 - (id)initWithWrappedObject:(ERPythonObject *)object {
+    return [self initWithWrappedObject:object valueClass:[ERPythonObject class]];
+}
+
+- (id)initWithWrappedObject:(ERPythonObject *)object valueClass:(__unsafe_unretained Class)cls {
     if (self = [super init]) {
         _backingObject = object;
+        _valueClass = cls;
     }
     return self;
 }
 
 - (id)objectForKey:(id)aKey {
     PyObject *value = PyMapping_GetItemString(_backingObject.handle, ((NSString *) aKey).UTF8String);
-    ERPythonObject *obj = [[ERPythonObject alloc] initWithHandle:value];
+    ERPythonObject *obj = [[_valueClass alloc] initWithHandle:value];
     Py_XDECREF(value);
     return obj;
 }

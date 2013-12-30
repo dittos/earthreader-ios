@@ -8,11 +8,12 @@
 
 #import "ERPythonObject.h"
 #import "ERFeed.h"
+#import "ERSubscription.h"
 
 @interface ERSubscriptionList : ERPythonObject
 
 @property (readonly) NSArray *children;
 
-- (ERPythonObject *)subscribe:(ERFeed *)feed;
+- (ERSubscription *)subscribe:(ERFeed *)feed;
 
 @end

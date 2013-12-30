@@ -11,6 +11,7 @@
 #import "ERPythonObject.h"
 #import "ERFeed.h"
 #import "ERStage.h"
+#import "ERCrawler.h"
 
 #import "ERFeedViewController.h"
 
@@ -70,17 +71,12 @@
     NSLog(@"Fetching...");
     NSString *url = [alertView textFieldAtIndex:0].text;
     [SVProgressHUD show];
-    [ERFeed fetchFromURL:url completionHandler:^(ERFeed *feed) {
+    [[ERCrawler sharedCrawler] subscribe:url inList:_data completionHandler:^(ERFeed *feed) {
         if (!feed) {
             [SVProgressHUD showErrorWithStatus:@"Error"];
             return;
         }
         
-        ERPythonObject *sub = [_data subscribe:feed];
-        ERStage *stage = [ERStage currentStage];
-        stage.subscriptions = _data;
-        stage.feeds[[sub[@"feed_id"] stringValue]] = feed;
-        [stage commit];
         NSLog(@"OK!");
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
@@ -115,10 +111,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ERPythonObject *subscription = _data.children[indexPath.row];
-    NSString *feedId = [subscription[@"feed_id"] stringValue];
-    ERFeed *feed = [[ERFeed alloc] initWithWrappedObject:[ERStage currentStage].feeds[feedId]];
-    ERFeedViewController *vc = [[ERFeedViewController alloc] initWithObject:feed];
+    ERSubscription *subscription = _data.children[indexPath.row];
+    ERFeedViewController *vc = [[ERFeedViewController alloc] initWithObject:subscription];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
