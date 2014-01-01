@@ -23,18 +23,30 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    ERSession *session = [ERSession defaultSession];
-    ERRepo *repo = [[ERRepo alloc] initWithPath:[@"file://" stringByAppendingString:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]]];
-    [repo print];
-    
-    ERStage *stage = [[ERStage alloc] initWithSession:session usingRepo:repo];
-    [ERStage setCurrentStage:stage];
-    
-    ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithList:stage.subscriptions];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nav;
+    NSString *repoPath = [@"file://" stringByAppendingString:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]];
+    ERPythonObject *server = [[ERPythonObject moduleWithName:"helpers"][@"new_server"] callWithArgs:"(ss)", repoPath.UTF8String, [ERSession defaultSessionID].UTF8String];
+    int port = PyInt_AsLong([server[@"effective_port"]handle]);
+    NSLog(@"Running on %d...", port);
+    [NSThread detachNewThreadSelector:@selector(startServer:)
+                             toTarget:self
+                           withObject:server];
+  
+//    ERSession *session = [ERSession defaultSession];
+//    ERRepo *repo = [[ERRepo alloc] initWithPath:repoPath];
+//    [repo print];
+//    
+//    ERStage *stage = [[ERStage alloc] initWithSession:session usingRepo:repo];
+//    [ERStage setCurrentStage:stage];
+//    
+//    ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithList:stage.subscriptions];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+//    self.window.rootViewController = nav;
     
     return YES;
+}
+
+- (void)startServer:(ERPythonObject *)server {
+    [server[@"run"] callWithArgs:"()"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

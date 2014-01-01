@@ -14,3 +14,17 @@ def parse_feed(feed_xml, feed_url, content_type):
     feed.entries = sorted(feed.entries, key=lambda entry: entry.updated_at,
                           reverse=True)
     return feed_url, feed, crawler_hints
+
+# Fake multiprocessing module
+import sys, types
+mod = types.ModuleType('multiprocessing')
+mod.cpu_count = lambda: 1
+sys.modules[mod.__name__] = mod
+
+from waitress.server import create_server
+from earthreader.web.app import app
+
+def new_server(repo_uri, session_id):
+    app.config['REPOSITORY'] = repo_uri
+    app.config['SESSION_ID'] = session_id
+    return create_server(app, port=0)
