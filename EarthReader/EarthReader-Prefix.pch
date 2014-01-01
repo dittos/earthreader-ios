@@ -15,5 +15,3 @@
     #import <Foundation/Foundation.h>
     #import "ERAPIManager.h"
 #endif
-
-#include "python2.7/Python.h"

@@ -7,8 +7,13 @@
 //
 
 #import "ERAppDelegate.h"
-#import "ERSession.h"
+#import "ERAPIServer.h"
 #import "ERSubscriptionListViewController.h"
+
+@interface ERAppDelegate () {
+    ERAPIServer *_server;
+}
+@end
 
 @implementation ERAppDelegate
 
@@ -19,15 +24,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    NSString *repoPath = [@"file://" stringByAppendingString:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]];
-    ERPythonObject *server = [[ERPythonObject moduleWithName:"helpers"][@"new_server"] callWithArgs:"(ss)", repoPath.UTF8String, [ERSession defaultSessionID].UTF8String];
-    int port = PyInt_AsLong([server[@"effective_port"]handle]);
-    [NSThread detachNewThreadSelector:@selector(startServer:)
-                             toTarget:self
-                           withObject:server];
+    _server = [ERAPIServer sharedServer];
+    [_server start];
+    NSLog(@"Running on %d...", _server.port);
     
-    NSLog(@"Running on %d...", port);
-    ERAPIManager *manager = [[ERAPIManager alloc] initWithLocalPort:port];
+    ERAPIManager *manager = [[ERAPIManager alloc] initWithRootURL:_server.rootURL];
     [ERAPIManager setSharedManager:manager];
     
     ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -35,10 +36,6 @@
     self.window.rootViewController = nav;
     
     return YES;
-}
-
-- (void)startServer:(ERPythonObject *)server {
-    [server[@"run"] callWithArgs:"()"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

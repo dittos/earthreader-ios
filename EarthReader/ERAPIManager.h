@@ -13,7 +13,7 @@
 + (ERAPIManager *)sharedManager;
 + (void)setSharedManager:(ERAPIManager *)manager;
 
-- (id)initWithLocalPort:(NSUInteger)port;
+- (id)initWithRootURL:(NSString *)rootURL;
 
 @property (readonly) NSString *rootURL;
 

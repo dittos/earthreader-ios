@@ -24,7 +24,7 @@ sys.modules[mod.__name__] = mod
 from waitress.server import create_server
 from earthreader.web.app import app
 
-def new_server(repo_uri, session_id):
-    app.config['REPOSITORY'] = repo_uri
+def new_server(repo_path, session_id):
+    app.config['REPOSITORY'] = 'file://' + repo_path
     app.config['SESSION_ID'] = session_id
     return create_server(app, port=0)

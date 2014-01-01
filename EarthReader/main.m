@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "python2.7/Python.h"
 
 #import "ERAppDelegate.h"
 

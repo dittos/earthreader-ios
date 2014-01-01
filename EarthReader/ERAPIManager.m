@@ -21,9 +21,9 @@ static ERAPIManager *_sharedManager = nil;
     _sharedManager = manager;
 }
 
-- (id)initWithLocalPort:(NSUInteger)port {
+- (id)initWithRootURL:(NSString *)rootURL {
     if (self = [super initWithBaseURL:nil]) {
-        _rootURL = [@"http://localhost:" stringByAppendingFormat:@"%u", port];
+        _rootURL = rootURL;
     }
     return self;
 }
