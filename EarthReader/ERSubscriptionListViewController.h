@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ERSubscriptionList.h"
 
 @interface ERSubscriptionListViewController : UITableViewController <UIAlertViewDelegate>
 

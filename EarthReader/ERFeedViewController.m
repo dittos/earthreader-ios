@@ -8,8 +8,6 @@
 
 #import "ERFeedViewController.h"
 #import "EREntryViewController.h"
-#import "ERStage.h"
-#import "ERCrawler.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 

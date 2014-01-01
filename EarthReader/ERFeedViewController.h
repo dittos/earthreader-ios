@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ERFeed.h"
-#import "ERSubscription.h"
-
 @interface ERFeedViewController : UITableViewController
 
 - (id)initWithObject:(NSDictionary *)subscription;

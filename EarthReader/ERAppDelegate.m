@@ -7,11 +7,7 @@
 //
 
 #import "ERAppDelegate.h"
-
 #import "ERSession.h"
-#import "ERRepo.h"
-#import "ERStage.h"
-
 #import "ERSubscriptionListViewController.h"
 
 @implementation ERAppDelegate

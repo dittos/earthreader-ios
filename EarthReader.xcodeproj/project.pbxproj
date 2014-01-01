@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04E24044CEF94B66B35D1151 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB2CD8A46164308A3D4F577 /* libPods.a */; };
 		2729263A1874523D005567AF /* ERAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 272926391874523D005567AF /* ERAPIManager.m */; };
+		2729263D18745DC4005567AF /* ERSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2729263C18745DC4005567AF /* ERSession.m */; };
 		27CEE6F6186D75A10055DECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F5186D75A10055DECD /* Foundation.framework */; };
 		27CEE6F8186D75A10055DECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F7186D75A10055DECD /* CoreGraphics.framework */; };
 		27CEE6FA186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
@@ -21,21 +22,14 @@
 		27CEE727186D77C10055DECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE726186D77C10055DECD /* libsqlite3.dylib */; };
 		27CEE729186D77DE0055DECD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE728186D77DE0055DECD /* libz.dylib */; };
 		27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CEE7311870F36A0055DECD /* EREntryViewController.m */; };
-		27DA9773186E69300014F581 /* ERSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9772186E69300014F581 /* ERSession.m */; };
 		27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9775186E76C20014F581 /* ERPythonObject.m */; };
-		27DA9779186E7D540014F581 /* ERStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9778186E7D540014F581 /* ERStage.m */; };
-		27DA977C186E7D900014F581 /* ERRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA977B186E7D900014F581 /* ERRepo.m */; };
 		27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */; };
 		27DA9782186EBCA90014F581 /* ERPythonSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9781186EBCA90014F581 /* ERPythonSequence.m */; };
-		27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9784186EC1A10014F581 /* ERSubscriptionList.m */; };
 		27DA9787186EC7250014F581 /* kivy-ios-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27DA9786186EC7250014F581 /* kivy-ios-fat.a */; };
 		27DA9789186ED0020014F581 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9788186ED0020014F581 /* lib */; };
-		27DA978C186ED8F60014F581 /* ERFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978B186ED8F60014F581 /* ERFeed.m */; };
 		27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA978E186EE0730014F581 /* ERPythonMapping.m */; };
 		27DA9791186EE9CF0014F581 /* helpers.py in Resources */ = {isa = PBXBuildFile; fileRef = 27DA9790186EE9CF0014F581 /* helpers.py */; };
 		27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DA9793186EF65C0014F581 /* ERFeedViewController.m */; };
-		27F07D1E1871C48B001686E7 /* ERCrawler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F07D1D1871C48B001686E7 /* ERCrawler.m */; };
-		27F07D241871CAF0001686E7 /* ERSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F07D231871CAF0001686E7 /* ERSubscription.m */; };
 		27F07D2618743E63001686E7 /* include in Resources */ = {isa = PBXBuildFile; fileRef = 27F07D2518743E63001686E7 /* include */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +47,8 @@
 		1BB2CD8A46164308A3D4F577 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		272926381874523D005567AF /* ERAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERAPIManager.h; sourceTree = "<group>"; };
 		272926391874523D005567AF /* ERAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERAPIManager.m; sourceTree = "<group>"; };
+		2729263B18745DC4005567AF /* ERSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSession.h; sourceTree = "<group>"; };
+		2729263C18745DC4005567AF /* ERSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSession.m; sourceTree = "<group>"; };
 		27CEE6F2186D75A10055DECD /* EarthReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CEE6F5186D75A10055DECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27CEE6F7186D75A10055DECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,33 +65,19 @@
 		27CEE728186D77DE0055DECD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		27CEE7301870F36A0055DECD /* EREntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EREntryViewController.h; sourceTree = "<group>"; };
 		27CEE7311870F36A0055DECD /* EREntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EREntryViewController.m; sourceTree = "<group>"; };
-		27DA9771186E69300014F581 /* ERSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSession.h; sourceTree = "<group>"; };
-		27DA9772186E69300014F581 /* ERSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSession.m; sourceTree = "<group>"; };
 		27DA9774186E76C20014F581 /* ERPythonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonObject.h; sourceTree = "<group>"; };
 		27DA9775186E76C20014F581 /* ERPythonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonObject.m; sourceTree = "<group>"; };
-		27DA9777186E7D540014F581 /* ERStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERStage.h; sourceTree = "<group>"; };
-		27DA9778186E7D540014F581 /* ERStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERStage.m; sourceTree = "<group>"; };
-		27DA977A186E7D900014F581 /* ERRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERRepo.h; sourceTree = "<group>"; };
-		27DA977B186E7D900014F581 /* ERRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERRepo.m; sourceTree = "<group>"; };
 		27DA977D186EBB9F0014F581 /* ERSubscriptionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscriptionListViewController.h; sourceTree = "<group>"; };
 		27DA977E186EBB9F0014F581 /* ERSubscriptionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionListViewController.m; sourceTree = "<group>"; };
 		27DA9780186EBCA90014F581 /* ERPythonSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonSequence.h; sourceTree = "<group>"; };
 		27DA9781186EBCA90014F581 /* ERPythonSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonSequence.m; sourceTree = "<group>"; };
-		27DA9783186EC1A10014F581 /* ERSubscriptionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscriptionList.h; sourceTree = "<group>"; };
-		27DA9784186EC1A10014F581 /* ERSubscriptionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscriptionList.m; sourceTree = "<group>"; };
 		27DA9786186EC7250014F581 /* kivy-ios-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "kivy-ios-fat.a"; path = "build/lib/kivy-ios-fat.a"; sourceTree = "<group>"; };
 		27DA9788186ED0020014F581 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = build/python/lib; sourceTree = "<group>"; };
-		27DA978A186ED8F60014F581 /* ERFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERFeed.h; sourceTree = "<group>"; };
-		27DA978B186ED8F60014F581 /* ERFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERFeed.m; sourceTree = "<group>"; };
 		27DA978D186EE0730014F581 /* ERPythonMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERPythonMapping.h; sourceTree = "<group>"; };
 		27DA978E186EE0730014F581 /* ERPythonMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERPythonMapping.m; sourceTree = "<group>"; };
 		27DA9790186EE9CF0014F581 /* helpers.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = helpers.py; path = EarthReader/helpers.py; sourceTree = "<group>"; };
 		27DA9792186EF65C0014F581 /* ERFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERFeedViewController.h; sourceTree = "<group>"; };
 		27DA9793186EF65C0014F581 /* ERFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERFeedViewController.m; sourceTree = "<group>"; };
-		27F07D1C1871C48B001686E7 /* ERCrawler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCrawler.h; sourceTree = "<group>"; };
-		27F07D1D1871C48B001686E7 /* ERCrawler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCrawler.m; sourceTree = "<group>"; };
-		27F07D221871CAF0001686E7 /* ERSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERSubscription.h; sourceTree = "<group>"; };
-		27F07D231871CAF0001686E7 /* ERSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERSubscription.m; sourceTree = "<group>"; };
 		27F07D2518743E63001686E7 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = build/python/include; sourceTree = "<group>"; };
 		DEF22E62BE3D4030B6F478DE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,14 +150,13 @@
 			children = (
 				27CEE704186D75A10055DECD /* ERAppDelegate.h */,
 				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
-				27F07D1C1871C48B001686E7 /* ERCrawler.h */,
-				27F07D1D1871C48B001686E7 /* ERCrawler.m */,
 				272926381874523D005567AF /* ERAPIManager.h */,
 				272926391874523D005567AF /* ERAPIManager.m */,
+				2729263B18745DC4005567AF /* ERSession.h */,
+				2729263C18745DC4005567AF /* ERSession.m */,
 				27CEE707186D75A10055DECD /* Images.xcassets */,
 				27CEE6FC186D75A10055DECD /* Supporting Files */,
 				27DA9798186EFF580014F581 /* Python Bridge */,
-				27DA9799186EFF7B0014F581 /* Models */,
 				27DA979A186EFF8A0014F581 /* View Controllers */,
 			);
 			path = EarthReader;
@@ -203,25 +184,6 @@
 				27DA978E186EE0730014F581 /* ERPythonMapping.m */,
 			);
 			name = "Python Bridge";
-			sourceTree = "<group>";
-		};
-		27DA9799186EFF7B0014F581 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				27DA9771186E69300014F581 /* ERSession.h */,
-				27DA9772186E69300014F581 /* ERSession.m */,
-				27DA9777186E7D540014F581 /* ERStage.h */,
-				27DA9778186E7D540014F581 /* ERStage.m */,
-				27DA977A186E7D900014F581 /* ERRepo.h */,
-				27DA977B186E7D900014F581 /* ERRepo.m */,
-				27DA9783186EC1A10014F581 /* ERSubscriptionList.h */,
-				27DA9784186EC1A10014F581 /* ERSubscriptionList.m */,
-				27DA978A186ED8F60014F581 /* ERFeed.h */,
-				27DA978B186ED8F60014F581 /* ERFeed.m */,
-				27F07D221871CAF0001686E7 /* ERSubscription.h */,
-				27F07D231871CAF0001686E7 /* ERSubscription.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		27DA979A186EFF8A0014F581 /* View Controllers */ = {
@@ -370,20 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27DA977C186E7D900014F581 /* ERRepo.m in Sources */,
 				27CEE702186D75A10055DECD /* main.m in Sources */,
-				27F07D241871CAF0001686E7 /* ERSubscription.m in Sources */,
-				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
 				27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */,
 				2729263A1874523D005567AF /* ERAPIManager.m in Sources */,
 				27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */,
 				27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */,
-				27DA9773186E69300014F581 /* ERSession.m in Sources */,
+				2729263D18745DC4005567AF /* ERSession.m in Sources */,
 				27DA978F186EE0730014F581 /* ERPythonMapping.m in Sources */,
 				27CEE706186D75A10055DECD /* ERAppDelegate.m in Sources */,
-				27F07D1E1871C48B001686E7 /* ERCrawler.m in Sources */,
-				27DA9779186E7D540014F581 /* ERStage.m in Sources */,
-				27DA9785186EC1A10014F581 /* ERSubscriptionList.m in Sources */,
 				27DA9776186E76C20014F581 /* ERPythonObject.m in Sources */,
 				27DA9782186EBCA90014F581 /* ERPythonSequence.m in Sources */,
 			);
