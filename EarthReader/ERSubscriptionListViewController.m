@@ -89,6 +89,7 @@
     [mgr POST:[mgr.rootURL stringByAppendingString:@"/feeds/"] parameters:@{@"url": url}
        success:^(AFHTTPRequestOperation *operation, id responseObject) {
            [SVProgressHUD dismiss];
+           [self loadData];
            NSLog(@"OK: %@", responseObject);
        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            [SVProgressHUD showErrorWithStatus:@"Error"];
