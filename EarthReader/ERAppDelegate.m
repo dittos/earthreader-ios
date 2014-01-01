@@ -7,12 +7,13 @@
 //
 
 #import "ERAppDelegate.h"
-
-#import "ERSession.h"
-#import "ERRepo.h"
-#import "ERStage.h"
-
+#import "ERAPIServer.h"
 #import "ERSubscriptionListViewController.h"
+
+@interface ERAppDelegate () {
+    ERAPIServer *_server;
+}
+@end
 
 @implementation ERAppDelegate
 
@@ -23,14 +24,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    ERSession *session = [ERSession defaultSession];
-    ERRepo *repo = [[ERRepo alloc] initWithPath:[@"file://" stringByAppendingString:NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]]];
-    [repo print];
+    _server = [ERAPIServer sharedServer];
+    [_server start];
+    NSLog(@"Running on %d...", _server.port);
     
-    ERStage *stage = [[ERStage alloc] initWithSession:session usingRepo:repo];
-    [ERStage setCurrentStage:stage];
+    ERAPIManager *manager = [[ERAPIManager alloc] initWithRootURL:_server.rootURL];
+    [ERAPIManager setSharedManager:manager];
     
-    ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithList:stage.subscriptions];
+    ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     

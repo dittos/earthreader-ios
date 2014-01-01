@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "python2.7/Python.h"
 
 @interface ERPythonObject : NSObject
 

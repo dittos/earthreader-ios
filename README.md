@@ -11,8 +11,8 @@ It runs [libearth](http://libearth.earthreader.org/en/0.1.0/) on the embedded Py
 
 ## Setup
 
-1. `git submodule init && git submodule update`
-2. `pod install`
-3. Open `EarthReader.xcworkspace`
-4. ???
-5. PROFIT!
+* `./import-deps.sh`
+* `pod install`
+* Open `EarthReader.xcworkspace`
+* ???
+* PROFIT!

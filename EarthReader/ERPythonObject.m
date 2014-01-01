@@ -12,6 +12,8 @@
 
 + (ERPythonObject *)moduleWithName:(const char *)name {
     PyObject *mod = PyImport_ImportModule(name);
+    if (!mod)
+        PyErr_Print();
     ERPythonObject *wrapped = [[ERPythonObject alloc] initWithHandle:mod];
     Py_XDECREF(mod);
     return wrapped;

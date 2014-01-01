@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ERPythonObject.h"
-
 @interface EREntryViewController : UIViewController
 
-- (id)initWithObject:(ERPythonObject *)entry;
+- (id)initWithObject:(NSDictionary *)entry;
 
 @end

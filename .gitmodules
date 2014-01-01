@@ -1,3 +1,0 @@
-[submodule "libearth"]
-	path = libearth
-	url = https://github.com/earthreader/libearth.git
