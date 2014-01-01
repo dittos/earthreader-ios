@@ -83,16 +83,16 @@
         return;
     
     NSLog(@"Fetching...");
+    ERAPIManager *mgr = [ERAPIManager sharedManager];
     NSString *url = [alertView textFieldAtIndex:0].text;
     [SVProgressHUD show];
-    [[ERAPIManager sharedManager] POST:@"/feeds/"
-                            parameters:@{@"url": url}
-                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                   [SVProgressHUD dismiss];
-                                   NSLog(@"OK: %@", responseObject);
-                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                   [SVProgressHUD showErrorWithStatus:@"Error"];
-                               }];
+    [mgr POST:[mgr.rootURL stringByAppendingString:@"/feeds/"] parameters:@{@"url": url}
+       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           [SVProgressHUD dismiss];
+           NSLog(@"OK: %@", responseObject);
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           [SVProgressHUD showErrorWithStatus:@"Error"];
+       }];
 }
 
 #pragma mark - Table view data source
