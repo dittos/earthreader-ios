@@ -12,6 +12,6 @@
 
 @interface EREntryViewController : UIViewController
 
-- (id)initWithObject:(ERPythonObject *)entry;
+- (id)initWithObject:(NSDictionary *)entry;
 
 @end

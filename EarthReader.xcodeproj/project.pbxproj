@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04E24044CEF94B66B35D1151 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB2CD8A46164308A3D4F577 /* libPods.a */; };
+		2729263A1874523D005567AF /* ERAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 272926391874523D005567AF /* ERAPIManager.m */; };
 		27CEE6F6186D75A10055DECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F5186D75A10055DECD /* Foundation.framework */; };
 		27CEE6F8186D75A10055DECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F7186D75A10055DECD /* CoreGraphics.framework */; };
 		27CEE6FA186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		1BB2CD8A46164308A3D4F577 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		272926381874523D005567AF /* ERAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERAPIManager.h; sourceTree = "<group>"; };
+		272926391874523D005567AF /* ERAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERAPIManager.m; sourceTree = "<group>"; };
 		27CEE6F2186D75A10055DECD /* EarthReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CEE6F5186D75A10055DECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27CEE6F7186D75A10055DECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
 				27F07D1C1871C48B001686E7 /* ERCrawler.h */,
 				27F07D1D1871C48B001686E7 /* ERCrawler.m */,
+				272926381874523D005567AF /* ERAPIManager.h */,
+				272926391874523D005567AF /* ERAPIManager.m */,
 				27CEE707186D75A10055DECD /* Images.xcassets */,
 				27CEE6FC186D75A10055DECD /* Supporting Files */,
 				27DA9798186EFF580014F581 /* Python Bridge */,
@@ -370,6 +375,7 @@
 				27F07D241871CAF0001686E7 /* ERSubscription.m in Sources */,
 				27DA978C186ED8F60014F581 /* ERFeed.m in Sources */,
 				27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */,
+				2729263A1874523D005567AF /* ERAPIManager.m in Sources */,
 				27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */,
 				27DA977F186EBB9F0014F581 /* ERSubscriptionListViewController.m in Sources */,
 				27DA9773186E69300014F581 /* ERSession.m in Sources */,

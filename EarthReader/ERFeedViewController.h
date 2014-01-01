@@ -13,6 +13,6 @@
 
 @interface ERFeedViewController : UITableViewController
 
-- (id)initWithObject:(ERSubscription *)subscription;
+- (id)initWithObject:(NSDictionary *)subscription;
 
 @end

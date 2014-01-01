@@ -15,19 +15,19 @@
 
 @interface ERFeedViewController ()
 {
-    ERSubscription *_sub;
-    ERFeed *_feed;
+    NSDictionary *_sub;
+    NSMutableArray *_data;
 }
 @end
 
 @implementation ERFeedViewController
 
-- (id)initWithObject:(ERSubscription *)subscription
+- (id)initWithObject:(NSDictionary *)subscription
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         _sub = subscription;
-        [self loadFeed];
+        _data = [NSMutableArray array];
     }
     return self;
 }
@@ -36,9 +36,10 @@
 {
     [super viewDidLoad];
     
-    self.title = [_feed[@"title"][@"value"] stringValue];
+    self.title = _sub[@"title"];
+    [self loadData];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshFeed)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(requestFeedRefresh)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,23 +54,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)loadFeed {
-    _feed = [[ERFeed alloc] initWithWrappedObject:[ERStage currentStage].feeds[_sub.feedID]];
+- (void)loadData {
+    [SVProgressHUD show];
+    [[ERAPIManager sharedManager] GET:_sub[@"entries_url"]
+                           parameters:nil
+                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                  [self parseResponse:responseObject];
+                                  [SVProgressHUD dismiss];
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  [SVProgressHUD showErrorWithStatus:@"Error"];
+                              }];
 }
 
-- (void)refreshFeed {
+- (void)parseResponse:(NSDictionary *)response {
+    [_data removeAllObjects];
+    [_data addObjectsFromArray:response[@"entries"]];
+    [self.tableView reloadData];
+}
+
+- (void)requestFeedRefresh {
     [SVProgressHUD show];
-    [[ERCrawler sharedCrawler] refresh:_sub completionHandler:^(ERSubscription *sub, ERFeed *feed) {
-        if (!feed) {
-            [SVProgressHUD showErrorWithStatus:@"Error"];
-            return;
-        }
-        
-        NSLog(@"OK!");
-        [SVProgressHUD dismiss];
-        [self loadFeed];
-        [self.tableView reloadData];
-    }];
+    [[ERAPIManager sharedManager] PUT:_sub[@"entries_url"]
+                           parameters:nil
+                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                  [SVProgressHUD dismiss];
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  [SVProgressHUD dismiss];
+                              }];
 }
 
 #pragma mark - Table view data source
@@ -81,7 +92,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _feed.entries.count;
+    return _data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,15 +104,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    ERPythonObject *entry = _feed.entries[indexPath.row];
-    cell.textLabel.text = [entry[@"title"][@"value"] stringValue];
-    cell.detailTextLabel.text = [[entry[@"updated_at"][@"__str__"] callWithArgs:"()"] stringValue];
+    NSDictionary *entry = _data[indexPath.row];
+    cell.textLabel.text = entry[@"title"];
+    cell.detailTextLabel.text = entry[@"updated"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ERPythonObject *entry = _feed.entries[indexPath.row];
+    NSDictionary *entry = _data[indexPath.row];
     EREntryViewController *vc = [[EREntryViewController alloc] initWithObject:entry];
     [self.navigationController pushViewController:vc animated:YES];
 }

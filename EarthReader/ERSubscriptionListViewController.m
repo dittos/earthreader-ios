@@ -19,16 +19,17 @@
 
 @interface ERSubscriptionListViewController ()
 {
-    __strong ERSubscriptionList *_data;
+    NSMutableArray *_data;
 }
 @end
 
 @implementation ERSubscriptionListViewController
 
-- (id)initWithList:(ERSubscriptionList *)list {
-    self = [super initWithStyle:UITableViewStylePlain];
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
     if (self) {
-        _data = list;
+        _data = [NSMutableArray array];
     }
     return self;
 }
@@ -37,7 +38,7 @@
 {
     [super viewDidLoad];
     
-    [self.tableView reloadData];
+    [self loadData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,6 +52,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadData {
+    [SVProgressHUD show];
+    ERAPIManager *mgr = [ERAPIManager sharedManager];
+    [mgr GET:[mgr.rootURL stringByAppendingString:@"/feeds/"] parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              [self parseResponse:responseObject];
+              [SVProgressHUD dismiss];
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              [SVProgressHUD showErrorWithStatus:@"Error"];
+          }];
+}
+
+- (void)parseResponse:(NSDictionary *)response {
+    [_data removeAllObjects];
+    [_data addObjectsFromArray:response[@"feeds"]];
+    [self.tableView reloadData];
 }
 
 - (void)addFeed {
@@ -71,16 +90,14 @@
     NSLog(@"Fetching...");
     NSString *url = [alertView textFieldAtIndex:0].text;
     [SVProgressHUD show];
-    [[ERCrawler sharedCrawler] subscribe:url inList:_data completionHandler:^(ERFeed *feed) {
-        if (!feed) {
-            [SVProgressHUD showErrorWithStatus:@"Error"];
-            return;
-        }
-        
-        NSLog(@"OK!");
-        [SVProgressHUD dismiss];
-        [self.tableView reloadData];
-    }];
+    [[ERAPIManager sharedManager] POST:@"/feeds/"
+                            parameters:@{@"url": url}
+                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                   [SVProgressHUD dismiss];
+                                   NSLog(@"OK: %@", responseObject);
+                               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                   [SVProgressHUD showErrorWithStatus:@"Error"];
+                               }];
 }
 
 #pragma mark - Table view data source
@@ -92,7 +109,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _data.children.count;
+    return _data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,14 +121,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    ERPythonObject *subscription = _data.children[indexPath.row];
-    cell.textLabel.text = [subscription[@"label"] stringValue];
+    NSDictionary *subscription = _data[indexPath.row];
+    cell.textLabel.text = subscription[@"title"];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ERSubscription *subscription = _data.children[indexPath.row];
+    NSDictionary *subscription = _data[indexPath.row];
     ERFeedViewController *vc = [[ERFeedViewController alloc] initWithObject:subscription];
     [self.navigationController pushViewController:vc animated:YES];
 }

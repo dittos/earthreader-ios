@@ -10,13 +10,13 @@
 
 @interface EREntryViewController () {
     UIWebView *_webView;
-    ERPythonObject *_entry;
+    NSDictionary *_entry;
 }
 @end
 
 @implementation EREntryViewController
 
-- (id)initWithObject:(ERPythonObject *)entry
+- (id)initWithObject:(NSDictionary *)entry
 {
     if (self = [super init]) {
         _entry = entry;
@@ -34,18 +34,21 @@
 {
     [super viewDidLoad];
     
-    ERPythonObject *content = _entry[@"content"];
-    if (content.handle == Py_None)
-        content = _entry[@"summary"];
-    
-    if (content.handle == Py_None) {
-        [self.navigationController popViewControllerAnimated:YES];
-        return;
-    }
-    
-    NSString *contentHTML = [content[@"sanitized_html"] stringValue];
-    
-	[_webView loadHTMLString:contentHTML baseURL:nil];
+    [self loadData];
+}
+
+- (void)loadData {
+    [[ERAPIManager sharedManager] GET:_entry[@"entry_url"]
+                           parameters:nil
+                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                  [self parseResponse:responseObject];
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  
+                              }];
+}
+
+- (void)parseResponse:(NSDictionary *)response {
+    [_webView loadHTMLString:response[@"content"] baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning

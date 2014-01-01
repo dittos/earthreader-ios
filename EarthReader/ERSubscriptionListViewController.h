@@ -11,6 +11,4 @@
 
 @interface ERSubscriptionListViewController : UITableViewController <UIAlertViewDelegate>
 
-- (id)initWithList:(ERSubscriptionList *)list;
-
 @end
