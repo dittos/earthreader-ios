@@ -19,12 +19,17 @@
 
 - (void)setPort:(NSUInteger)port {
     self.rootURL = [@"http://localhost:" stringByAppendingFormat:@"%u", port];
+    _port = port;
 }
 
 - (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)request success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
-    if ([request.URL.host isEqualToString:@"localhost"]) {
+    if ([request.URL.host isEqualToString:@"localhost"] &&
+        [request.URL.port unsignedIntegerValue] != _port) {
         NSMutableURLRequest *req = [request mutableCopy];
-        req.URL = [NSURL URLWithString:req.URL.path relativeToURL:[NSURL URLWithString:self.rootURL]];
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"localhost:[0-9]+" options:0 error:nil];
+        NSString *url = req.URL.absoluteString;
+        url = [regex stringByReplacingMatchesInString:url options:0 range:NSMakeRange(0, url.length) withTemplate:[@"localhost:" stringByAppendingFormat:@"%u", _port]];
+        req.URL = [NSURL URLWithString:url];
         request = req;
     }
     return [super HTTPRequestOperationWithRequest:request success:success failure:failure];
