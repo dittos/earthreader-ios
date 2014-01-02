@@ -15,6 +15,6 @@
 
 - (id)initWithRootURL:(NSString *)rootURL;
 
-@property (readonly) NSString *rootURL;
+@property (copy, nonatomic) NSString *rootURL;
 
 @end

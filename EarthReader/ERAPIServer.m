@@ -39,6 +39,7 @@ static void ERAPIServerRun(PyObject *server) {
 
 @interface ERAPIServer () {
     PyObject *_server;
+    dispatch_queue_t _queue;
 }
 @end
 
@@ -71,22 +72,38 @@ static void ERAPIServerRun(PyObject *server) {
 - (id)init {
     if (self = [super init]) {
         _repositoryPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-        _server = ERAPIServerCreate(_repositoryPath, [ERAPIServer defaultSessionID]);
-        _port = ERAPIServerGetPort(_server);
+        _queue = dispatch_queue_create("earthreader-web", NULL);
     }
     return self;
 }
 
+- (void)start {
+    _server = ERAPIServerCreate(_repositoryPath, [ERAPIServer defaultSessionID]);
+    _port = ERAPIServerGetPort(_server);
+    dispatch_async(_queue, ^{
+        ERAPIServerRun(_server);
+    });
+}
+
+- (void)stop {
+    PyObject *server = _server;
+    _server = NULL;
+    _port = 0;
+    
+    PyGILState_STATE gstate;
+    gstate = PyGILState_Ensure();
+    PyErr_SetString(PyExc_KeyboardInterrupt, "Stop it!");
+    PyGILState_Release(gstate);
+    
+    // Wait for stop
+    dispatch_sync(_queue, ^{
+        PyObject_CallMethod(server, "close", NULL);
+        Py_XDECREF(server);
+    });
+}
+
 - (void)dealloc {
-    Py_XDECREF(_server);
-}
-
-- (void)main {
-    ERAPIServerRun(_server);
-}
-
-- (NSString *)rootURL {
-    return [@"http://localhost:" stringByAppendingFormat:@"%u", _port];
+    [self stop];
 }
 
 @end

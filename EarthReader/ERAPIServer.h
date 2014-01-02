@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ERAPIServer : NSThread
+@interface ERAPIServer : NSObject
 
 + (ERAPIServer *)sharedServer;
 
 - (id)init;
-- (void)main;
+- (void)start;
+- (void)stop;
 
 @property (readonly) NSString *repositoryPath;
 @property (readonly) NSUInteger port;
-@property (readonly) NSString *rootURL;
 
 @end

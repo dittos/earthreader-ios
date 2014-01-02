@@ -10,6 +10,7 @@
 		04E24044CEF94B66B35D1151 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB2CD8A46164308A3D4F577 /* libPods.a */; };
 		2729263A1874523D005567AF /* ERAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 272926391874523D005567AF /* ERAPIManager.m */; };
 		2729264318745F58005567AF /* ERAPIServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2729264218745F58005567AF /* ERAPIServer.m */; };
+		272926461875A78A005567AF /* ERLocalAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 272926451875A78A005567AF /* ERLocalAPIManager.m */; };
 		27CEE6F6186D75A10055DECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F5186D75A10055DECD /* Foundation.framework */; };
 		27CEE6F8186D75A10055DECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F7186D75A10055DECD /* CoreGraphics.framework */; };
 		27CEE6FA186D75A10055DECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CEE6F9186D75A10055DECD /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 		272926391874523D005567AF /* ERAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERAPIManager.m; sourceTree = "<group>"; };
 		2729264118745F58005567AF /* ERAPIServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERAPIServer.h; sourceTree = "<group>"; };
 		2729264218745F58005567AF /* ERAPIServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERAPIServer.m; sourceTree = "<group>"; };
+		272926441875A78A005567AF /* ERLocalAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERLocalAPIManager.h; sourceTree = "<group>"; };
+		272926451875A78A005567AF /* ERLocalAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERLocalAPIManager.m; sourceTree = "<group>"; };
 		27CEE6F2186D75A10055DECD /* EarthReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CEE6F5186D75A10055DECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27CEE6F7186D75A10055DECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +155,8 @@
 				27CEE705186D75A10055DECD /* ERAppDelegate.m */,
 				272926381874523D005567AF /* ERAPIManager.h */,
 				272926391874523D005567AF /* ERAPIManager.m */,
+				272926441875A78A005567AF /* ERLocalAPIManager.h */,
+				272926451875A78A005567AF /* ERLocalAPIManager.m */,
 				2729264118745F58005567AF /* ERAPIServer.h */,
 				2729264218745F58005567AF /* ERAPIServer.m */,
 				27CEE707186D75A10055DECD /* Images.xcassets */,
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27CEE702186D75A10055DECD /* main.m in Sources */,
+				272926461875A78A005567AF /* ERLocalAPIManager.m in Sources */,
 				27CEE7321870F36A0055DECD /* EREntryViewController.m in Sources */,
 				2729263A1874523D005567AF /* ERAPIManager.m in Sources */,
 				27DA9794186EF65C0014F581 /* ERFeedViewController.m in Sources */,

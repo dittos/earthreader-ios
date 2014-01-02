@@ -8,6 +8,7 @@
 
 #import "ERAppDelegate.h"
 #import "ERAPIServer.h"
+#import "ERLocalAPIManager.h"
 #import "ERSubscriptionListViewController.h"
 
 @interface ERAppDelegate () {
@@ -28,7 +29,7 @@
     [_server start];
     NSLog(@"Running on %d...", _server.port);
     
-    ERAPIManager *manager = [[ERAPIManager alloc] initWithRootURL:_server.rootURL];
+    ERAPIManager *manager = [[ERLocalAPIManager alloc] initWithLocalPort:_server.port];
     [ERAPIManager setSharedManager:manager];
     
     ERSubscriptionListViewController *vc = [[ERSubscriptionListViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -48,11 +49,16 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [_server stop];
+    NSLog(@"Stopped");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [_server start];
+    NSLog(@"Running on %d...", _server.port);
+    ((ERLocalAPIManager *)[ERAPIManager sharedManager]).port = _server.port;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
